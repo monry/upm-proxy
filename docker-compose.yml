@@ -1,0 +1,9 @@
+version: "3"
+services:
+  proxy:
+    build: nginx/
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+    command: /bin/bash -c "envsubst '$$PORT $$AUTH_TOKEN $$REGISTRY_URL' < /etc/nginx/conf.d/upm-proxy.conf.template > /etc/nginx/conf.d/upm-proxy.conf && exec nginx -g 'daemon off;'"
