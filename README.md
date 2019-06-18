@@ -15,6 +15,7 @@ docker-compose up --build
 ### `.env`
 
 ```.env
+HOSTNAME=<hostname>
 PORT=<port>
 AUTH_TOKEN=<authorization-token>
 REGISTRY_URL=<upm-registry-url>
@@ -22,9 +23,10 @@ REGISTRY_URL=<upm-registry-url>
 
 | name | description |
 | --- | --- |
-| port | Port number to listen (default: 4873) |
-| authorization-token | Authorization token obtained from registry server (Base64 format) |
-| upm-registry-url | Registry URL |
+| HOSTNAME | Port number to listen |
+| PORT | Port number to listen (default: 443) |
+| AUTH_TOKEN | Authorization token obtained from registry server (Base64 format) |
+| REGISTRY_URL | Registry URL to proxy |
 
 ### `Packages/manifest.json` in Unity Project
 
@@ -33,7 +35,7 @@ REGISTRY_URL=<upm-registry-url>
   "scopedRegistries": [
     {
       "name": "Proxy Unity Package Manager Registry",
-      "url": "http://localhost:4873",
+      "url": "https://${hostname}",
       "scopes": [
         "dev.sample.upm"
       ]
@@ -45,7 +47,3 @@ REGISTRY_URL=<upm-registry-url>
   }
 }
 ```
-
-## Misc
-
-You must set `url_prefix: http://localhost:4873` to Verdaccio configuration to replace all URL returning from Verdaccio API.
