@@ -28,6 +28,18 @@ REGISTRY_URL=<upm-registry-url>
 | AUTH_TOKEN | Authorization token obtained from registry server (Base64 format) |
 | REGISTRY_URL | Registry URL to proxy |
 
+### Generate Self-Signed Cerfiticates
+
+Generate certificate and key file.
+Simply to use [`mkcert`](https://github.com/FiloSottile/mkcert), if you use macOS or Linux.
+
+```bash
+mkcert -install
+mkcert <hostname>
+```
+
+Put generated files into `nginx/` directory.
+
 ### `Packages/manifest.json` in Unity Project
 
 ```js
