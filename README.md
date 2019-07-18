@@ -23,7 +23,7 @@ REGISTRY_URL=<upm-registry-url>
 
 | name | description |
 | --- | --- |
-| HOSTNAME | Port number to listen |
+| HOSTNAME | Hostname to act as proxy (ex: `my-registry.local`) |
 | PORT | Port number to listen (default: 443) |
 | AUTH_TOKEN | Authorization token obtained from registry server (Base64 format) |
 | REGISTRY_URL | Registry URL to proxy |
