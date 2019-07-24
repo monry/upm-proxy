@@ -16,7 +16,6 @@ docker-compose up --build
 
 ```.env
 HOSTNAME=<hostname>
-PORT=<port>
 AUTH_TOKEN=<authorization-token>
 REGISTRY_URL=<upm-registry-url>
 ```
@@ -24,7 +23,6 @@ REGISTRY_URL=<upm-registry-url>
 | name | description |
 | --- | --- |
 | HOSTNAME | Hostname to act as proxy (ex: `my-registry.local`) |
-| PORT | Port number to listen (default: 443) |
 | AUTH_TOKEN | Authorization token obtained from registry server (Base64 format) |
 | REGISTRY_URL | Registry URL to proxy |
 
